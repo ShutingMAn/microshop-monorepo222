@@ -26,7 +26,7 @@ jobs:
           # Автоматическое определение версии Ubuntu через $(lsb_release -rs):          
           curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
           sudo apt-get update
-          sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev
+          sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev mssql-tools
 
       - name: Set up Python
         uses: actions/setup-python@v4

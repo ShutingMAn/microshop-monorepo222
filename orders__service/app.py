@@ -13,7 +13,7 @@ app.config['SWAGGER'] = {'title': 'Orders Service API', 'uiversion': 3}
 swagger = Swagger(app)
 
 
-def get_db_connection():
+def get_db_connection()
     """Умное подключение к БД"""
     server = os.getenv('DB_SERVER', 'stud-srv')
     database = os.getenv('DB_DATABASE', 'MicroshopZPA')

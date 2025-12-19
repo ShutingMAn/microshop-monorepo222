@@ -23,8 +23,7 @@ jobs:
       - name: Install ODBC Driver (Linux)
         run: |
           curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-          # Автоматическое определение версии Ubuntu через $(lsb_release -rs):          
-          curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+          curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
           sudo apt-get update
           sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev mssql-tools
 
@@ -41,7 +40,7 @@ jobs:
 
       - name: Create Database
         run: |
-          /opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -U sa -P TestPass123! -Q "CREATE DATABASE MicroshopOrders"
+          /opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -U sa -P TestPass123! -Q "CREATE DATABASE MicroshopZPA"
           /opt/mssql-tools/bin/sqlcmd -S 127.0.0.1 -d MicroshopZPA -U sa -P TestPass123! -Q "CREATE TABLE Orders (id INT PRIMARY KEY IDENTITY(1,1), product_id INT, customer_id INT, quantity INT)"
 
       - name: Run Tests

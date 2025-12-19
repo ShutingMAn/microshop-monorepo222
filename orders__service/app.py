@@ -15,7 +15,7 @@ swagger = Swagger(app)
 
 def get_db_connection():
     """Умное подключение к БД"""
-    server = os.getenv('DB_SERVER', 'stud-srv')
+    server = os.getenv('DB_SERVER', 'localhost')
     database = os.getenv('DB_DATABASE', 'MicroshopZPA')
     username = os.getenv('DB_USER')
     password = os.getenv('DB_PASSWORD')

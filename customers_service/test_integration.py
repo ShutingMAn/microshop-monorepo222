@@ -6,7 +6,7 @@ import pyodbc
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from orders_service.app import app
+from app import app
 
 # Переменные среды для теста
 DB_SERVER = os.getenv('DB_SERVER', 'localhost')

@@ -51,7 +51,7 @@ jobs:
           DB_DATABASE: MicroshopZPA
           DB_USER: sa
           DB_PASSWORD: TestPass123!
-        run: pytest tests/
+        run: pytest orders__service/
 
   # --- РАБОТА 2: СБОРКА И РЕЛИЗ (Новая часть ---
   build-and-release:

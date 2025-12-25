@@ -67,7 +67,7 @@ jobs:
         with:
           python-version: "3.9"
 
-      # 1. Запускаем наш скрипт упаковки
+      # 1. Запускаем наш скрипт упаковк
       - name: Build Package (Zip)
         run: python build_package.py
 

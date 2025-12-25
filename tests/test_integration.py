@@ -1,15 +1,10 @@
 import pytest
 import os
 import pyodbc
-
-
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from app import app
+from orders__service.app import app
 
 # Переменные среды для теста
-DB_SERVER = os.getenv('DB_SERVER', 'localhost')
+DB_SERVER = os.getenv('DB_SERVER', 'stud-srv')
 DB_DATABASE = os.getenv('DB_DATABASE', 'MicroshopZPA')
 DB_USER = os.getenv('DB_USER', 'sa')
 DB_PASSWORD = os.getenv('DB_PASSWORD', 'TestPass123!')

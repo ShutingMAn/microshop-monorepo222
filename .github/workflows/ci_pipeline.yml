@@ -7,7 +7,7 @@ on:
   push:
     branches: ["main"]
     tags:
-      - 'v*'  # Срабатывает на v1.0, v2.3.4 и т..
+      - 'v*'  # Срабатывает на v1.0, v2.3.4 и т.д.
   pull_request:
     branches: ["main"]
 
@@ -51,9 +51,9 @@ jobs:
           DB_DATABASE: MicroshopZPA
           DB_USER: sa
           DB_PASSWORD: TestPass123!
-        run: pytest orders__service/
+        run: pytest tests/
 
-  # --- РАБОТА 2: СБОРКА И РЕЛИЗ (Новая частm)---
+  # --- РАБОТА 2: СБОРКА И РЕЛИЗ (Новая часть) ---
   build-and-release:
     needs: tests  # Ждем, пока пройдут тесты!
     runs-on: ubuntu-22.04
@@ -67,7 +67,7 @@ jobs:
         with:
           python-version: "3.9"
 
-      # 1. Запускаем наш скрипт упаковк
+      # 1. Запускаем наш скрипт упаковки
       - name: Build Package (Zip)
         run: python build_package.py
 

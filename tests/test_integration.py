@@ -17,7 +17,7 @@ def client():
 
 @pytest.fixture(autouse=True)
 def clean_db():
-    """Очистка БД перед тестом"""
+    """Очистка БД перед тесто"""
     conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={DB_SERVER};DATABASE={DB_DATABASE};UID={DB_USER};PWD={DB_PASSWORD};TrustServerCertificate=yes;'
     try:
         conn = pyodbc.connect(conn_str)

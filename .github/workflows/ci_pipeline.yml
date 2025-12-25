@@ -53,7 +53,7 @@ jobs:
           DB_PASSWORD: TestPass123!
         run: pytest tests/
 
-  # --- РАБОТА 2: СБОРКА И РЕЛИЗ (Новая часть) ---
+  # --- РАБОТА 2: СБОРКА И РЕЛИЗ (Новая часть ---
   build-and-release:
     needs: tests  # Ждем, пока пройдут тесты!
     runs-on: ubuntu-22.04
